@@ -1,0 +1,12 @@
+#registerButton {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #0072ff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+#registerButton:hover {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.todolist.todolist.controller.RegisterController"
+            prefWidth="400" prefHeight="500"
+            style="-fx-background-color: linear-gradient(to bottom right, #0072ff, #00c6ff);">
+
+    <VBox alignment="CENTER" spacing="15" layoutX="50" layoutY="50">
+
+        <Label text="QuickCheck"
+               style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        <Label text="Register"
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+        <!-- Input Fields -->
+        <TextField fx:id="usernameField" promptText="Enter Username" prefWidth="300"
+                   style="-fx-background-radius: 10; -fx-padding: 8; -fx-font-size: 14px;"/>
+        <TextField fx:id="emailField" promptText="Enter Email" prefWidth="300"
+                   style="-fx-background-radius: 10; -fx-padding: 8; -fx-font-size: 14px;"/>
+        <PasswordField fx:id="passwordField" promptText="Enter Password" prefWidth="300"
+                       style="-fx-background-radius: 10; -fx-padding: 8; -fx-font-size: 14px;"/>
+
+        <!-- Register Button -->
+        <Button fx:id="registerButton" text="Register" onAction="#handleRegister" prefWidth="300"
+                style="-fx-background-color: #ffffff; -fx-text-fill: #0072ff; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+
+        <!-- Message Label -->
+        <Label fx:id="messageLabel" textFill="white" wrapText="true" textAlignment="CENTER"/>
+
+        <!-- Login Hyperlink -->
+        <Hyperlink text="Already have an account? Login here" onAction="#goToLogin"
+                   style="-fx-text-fill: white; -fx-font-size: 12px;"/>
+    </VBox>
+    
+    
+ 
+</AnchorPane>
+   
+      

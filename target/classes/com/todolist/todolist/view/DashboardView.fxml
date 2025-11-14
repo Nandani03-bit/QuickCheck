@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.todolist.todolist.controller.DashboardViewController"
+            prefWidth="950" prefHeight="600"
+            style="-fx-background-color: #F5F7FA;">
+
+    <!-- Top Navbar -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT"
+              style="-fx-background-color: linear-gradient(to right, #2196F3, #64B5F6);">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+
+            <Label text="QuickCheck Dashboard"
+                   style="-fx-font-size: 22px; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Refresh" onAction="#loadTasks"
+                    style="-fx-background-color: white; -fx-text-fill: #2196F3; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+        </HBox>
+    </top>
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox spacing="20" alignment="TOP_CENTER"
+              style="-fx-background-color: #E3F2FD; -fx-padding: 25;">
+            <Label text="Task Actions"
+                   style="-fx-font-size: 18px; -fx-text-fill: #1565C0; -fx-font-weight: bold;"/>
+
+            <Button text="Add Task" onAction="#addTask"
+                    style="-fx-pref-width: 150; -fx-pref-height: 40; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+
+            <Button text="Edit Task" onAction="#editTask"
+                    style="-fx-pref-width: 150; -fx-pref-height: 40; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+
+            <Button text="Delete Task" onAction="#deleteTask"
+                    style="-fx-pref-width: 150; -fx-pref-height: 40; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+        </VBox>
+    </left>
+
+    <!-- Center Content -->
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- Search Section -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Search:"/>
+                <TextField fx:id="searchField"
+                           onKeyReleased="#searchTasksByKey"
+                           promptText="Search by name, priority, or status"
+                           prefWidth="300"/>
+                <Button text="Search" onAction="#searchTasksByButton"
+                        style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8;"/>
+            </HBox>
+
+            <!-- Status Bar & Progress -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label fx:id="pendingLabel" text="Pending: 0"/>
+                <Label fx:id="doneLabel" text="Completed: 0"/>
+                <ProgressBar fx:id="progressBar" prefWidth="200" progress="0.0"/>
+            </HBox>
+
+            <!-- Tasks Table -->
+            <TableView fx:id="taskTable" prefHeight="400"
+                       style="-fx-background-radius: 8; -fx-border-color: #BBDEFB;">
+                <columns>
+                    <TableColumn fx:id="taskNameColumn" text="Task Name" prefWidth="250"/>
+                    <TableColumn fx:id="dueDateColumn" text="Due Date" prefWidth="150"/>
+                    <TableColumn fx:id="priorityColumn" text="Priority" prefWidth="120"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+            <!-- Message Label -->
+            <Label fx:id="messageLabel"
+                   style="-fx-text-fill: #2196F3; -fx-font-size: 14px;"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,8 @@
+com\todolist\todolist\main\MainApp.class
+com\todolist\todolist\modal\Task.class
+App.class
+com\todolist\todolist\controller\DBConnection.class
+com\todolist\todolist\controller\LoginController.class
+com\todolist\todolist\controller\DashboardViewController$1.class
+com\todolist\todolist\controller\RegisterController.class
+com\todolist\todolist\controller\DashboardViewController.class
